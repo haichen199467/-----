@@ -12,46 +12,46 @@
                           REQUIRE _printf_d
                           REQUIRE _printf_int_dec
                   PrintfLogo PROC
-;;;150    */
-;;;151    static void PrintfLogo(void)
+;;;151    */
+;;;152    static void PrintfLogo(void)
 000000  b510              PUSH     {r4,lr}
-;;;152    {
-;;;153    	printf("\r\n");
+;;;153    {
+;;;154    	printf("\r\n");
 000002  a00f              ADR      r0,|L1.64|
 000004  f7fffffe          BL       __2printf
-;;;154    	printf("*************************************************************\r\n");
+;;;155    	printf("*************************************************************\r\n");
 000008  a00e              ADR      r0,|L1.68|
 00000a  f7fffffe          BL       __2printf
-;;;155    	printf("* 例程名称   : %s\r\n", EXAMPLE_NAME);	/* 打印例程名称 */
+;;;156    	printf("* 例程名称   : %s\r\n", EXAMPLE_NAME);	/* 打印例程名称 */
 00000e  a11d              ADR      r1,|L1.132|
 000010  a01f              ADR      r0,|L1.144|
 000012  f7fffffe          BL       __2printf
-;;;156    	printf("* 例程版本   : %s\r\n", DEMO_VER);		/* 打印例程版本 */
+;;;157    	printf("* 例程版本   : %s\r\n", DEMO_VER);		/* 打印例程版本 */
 000016  a123              ADR      r1,|L1.164|
 000018  a023              ADR      r0,|L1.168|
 00001a  f7fffffe          BL       __2printf
-;;;157    	printf("* 发布日期   : %s\r\n", EXAMPLE_DATE);	/* 打印例程日期 */
+;;;158    	printf("* 发布日期   : %s\r\n", EXAMPLE_DATE);	/* 打印例程日期 */
 00001e  a127              ADR      r1,|L1.188|
 000020  a029              ADR      r0,|L1.200|
 000022  f7fffffe          BL       __2printf
-;;;158    
-;;;159    	/* 打印ST固件库版本，这3个定义宏在stm32f10x.h文件中 */
-;;;160    	printf("* 固件库版本 : V%d.%d.%d (STM32F4xx_StdPeriph_Driver)\r\n", __STM32F4XX_STDPERIPH_VERSION_MAIN,
+;;;159    
+;;;160    	/* 打印ST固件库版本，这3个定义宏在stm32f10x.h文件中 */
+;;;161    	printf("* 固件库版本 : V%d.%d.%d (STM32F4xx_StdPeriph_Driver)\r\n", __STM32F4XX_STDPERIPH_VERSION_MAIN,
 000026  2300              MOVS     r3,#0
 000028  2203              MOVS     r2,#3
 00002a  2101              MOVS     r1,#1
 00002c  a02b              ADR      r0,|L1.220|
 00002e  f7fffffe          BL       __2printf
-;;;161    			__STM32F4XX_STDPERIPH_VERSION_SUB1,__STM32F4XX_STDPERIPH_VERSION_SUB2);
-;;;162    	printf("* \n\r");	/* 打印一行空格 */
+;;;162    			__STM32F4XX_STDPERIPH_VERSION_SUB1,__STM32F4XX_STDPERIPH_VERSION_SUB2);
+;;;163    	printf("* \n\r");	/* 打印一行空格 */
 000032  a038              ADR      r0,|L1.276|
 000034  f7fffffe          BL       __2printf
-;;;163    	printf("*************************************************************\r\n");
+;;;164    	printf("*************************************************************\r\n");
 000038  a002              ADR      r0,|L1.68|
 00003a  f7fffffe          BL       __2printf
-;;;164    }
+;;;165    }
 00003e  bd10              POP      {r4,pc}
-;;;165    
+;;;166    
                           ENDP
 
                   |L1.64|
@@ -166,7 +166,7 @@
 ;;;51     	PrintfLogo();	/* 打印例程信息到串口1 */
 000018  f7fffffe          BL       PrintfLogo
 ;;;52     	while(1)
-00001c  e113              B        |L2.582|
+00001c  e11b              B        |L2.598|
                   |L2.30|
 ;;;53     	{
 ;;;54     		bsp_Idle();
@@ -176,7 +176,7 @@
 ;;;56     		GetBMP085();
 000026  f7fffffe          BL       GetBMP085
 ;;;57     		a =volt1;
-00002a  4887              LDR      r0,|L2.584|
+00002a  488b              LDR      r0,|L2.600|
 00002c  ed900a00          VLDR     s0,[r0,#0]
 000030  eeb08a40          VMOV.F32 s16,s0
 ;;;58     		F2CA(A,a); /*float->charArray*/
@@ -192,11 +192,11 @@
 00004e  f60d307c          ADD      r0,sp,#0xb7c
 000052  5443              STRB     r3,[r0,r1]
 000054  f50d5080          ADD      r0,sp,#0x1000
-000058  f89026bd          LDRB     r2,[r0,#0x6bd]
-00005c  4620              MOV      r0,r4
+000058  f89036bd          LDRB     r3,[r0,#0x6bd]
+00005c  4621              MOV      r1,r4
 00005e  1c64              ADDS     r4,r4,#1
-000060  f60d317c          ADD      r1,sp,#0xb7c
-000064  540a              STRB     r2,[r1,r0]
+000060  f60d307c          ADD      r0,sp,#0xb7c
+000064  5443              STRB     r3,[r0,r1]
 000066  f50d5080          ADD      r0,sp,#0x1000
 00006a  f89036be          LDRB     r3,[r0,#0x6be]
 00006e  4621              MOV      r1,r4
@@ -210,7 +210,7 @@
 000084  f60d307c          ADD      r0,sp,#0xb7c
 000088  5443              STRB     r3,[r0,r1]
 ;;;60     		a =volt2;
-00008a  4870              LDR      r0,|L2.588|
+00008a  4874              LDR      r0,|L2.604|
 00008c  ed900a00          VLDR     s0,[r0,#0]
 000090  eeb08a40          VMOV.F32 s16,s0
 ;;;61     		F2CA(A,a); /*float->charArray*/
@@ -220,11 +220,11 @@
 00009e  f7fffffe          BL       F2CA
 ;;;62     		HalfHour[i++]=A[0];HalfHour[i++]=A[1];HalfHour[i++]=A[2];HalfHour[i++]=A[3];
 0000a2  f50d5080          ADD      r0,sp,#0x1000
-0000a6  f89026bc          LDRB     r2,[r0,#0x6bc]
+0000a6  f89036bc          LDRB     r3,[r0,#0x6bc]
 0000aa  4621              MOV      r1,r4
 0000ac  1c64              ADDS     r4,r4,#1
 0000ae  f60d307c          ADD      r0,sp,#0xb7c
-0000b2  5442              STRB     r2,[r0,r1]
+0000b2  5443              STRB     r3,[r0,r1]
 0000b4  f50d5080          ADD      r0,sp,#0x1000
 0000b8  f89036bd          LDRB     r3,[r0,#0x6bd]
 0000bc  4621              MOV      r1,r4
@@ -232,11 +232,11 @@
 0000c0  f60d307c          ADD      r0,sp,#0xb7c
 0000c4  5443              STRB     r3,[r0,r1]
 0000c6  f50d5080          ADD      r0,sp,#0x1000
-0000ca  f89036be          LDRB     r3,[r0,#0x6be]
+0000ca  f89026be          LDRB     r2,[r0,#0x6be]
 0000ce  4621              MOV      r1,r4
 0000d0  1c64              ADDS     r4,r4,#1
 0000d2  f60d307c          ADD      r0,sp,#0xb7c
-0000d6  5443              STRB     r3,[r0,r1]
+0000d6  5442              STRB     r2,[r0,r1]
 0000d8  f50d5080          ADD      r0,sp,#0x1000
 0000dc  f89036bf          LDRB     r3,[r0,#0x6bf]
 0000e0  4621              MOV      r1,r4
@@ -244,7 +244,7 @@
 0000e4  f60d307c          ADD      r0,sp,#0xb7c
 0000e8  5443              STRB     r3,[r0,r1]
 ;;;63     		a =(float)g_tBMP085.Temp;
-0000ea  4859              LDR      r0,|L2.592|
+0000ea  485d              LDR      r0,|L2.608|
 0000ec  ed900a06          VLDR     s0,[r0,#0x18]
 0000f0  eeb80ac0          VCVT.F32.S32 s0,s0
 0000f4  eeb08a40          VMOV.F32 s16,s0
@@ -255,239 +255,246 @@
 000102  f7fffffe          BL       F2CA
 ;;;65     		HalfHour[i++]=A[0];HalfHour[i++]=A[1];HalfHour[i++]=A[2];HalfHour[i++]=A[3];
 000106  f50d5080          ADD      r0,sp,#0x1000
-00010a  f89026bc          LDRB     r2,[r0,#0x6bc]
-00010e  4620              MOV      r0,r4
+00010a  f89036bc          LDRB     r3,[r0,#0x6bc]
+00010e  4621              MOV      r1,r4
 000110  1c64              ADDS     r4,r4,#1
-000112  f60d317c          ADD      r1,sp,#0xb7c
-000116  540a              STRB     r2,[r1,r0]
+000112  f60d307c          ADD      r0,sp,#0xb7c
+000116  5443              STRB     r3,[r0,r1]
 000118  f50d5080          ADD      r0,sp,#0x1000
-00011c  f89026bd          LDRB     r2,[r0,#0x6bd]
-000120  4620              MOV      r0,r4
+00011c  f89036bd          LDRB     r3,[r0,#0x6bd]
+000120  4621              MOV      r1,r4
 000122  1c64              ADDS     r4,r4,#1
-000124  540a              STRB     r2,[r1,r0]
-000126  f50d5080          ADD      r0,sp,#0x1000
-00012a  f89026be          LDRB     r2,[r0,#0x6be]
-00012e  4620              MOV      r0,r4
-000130  1c64              ADDS     r4,r4,#1
-000132  540a              STRB     r2,[r1,r0]
-000134  f50d5080          ADD      r0,sp,#0x1000
-000138  f89026bf          LDRB     r2,[r0,#0x6bf]
-00013c  4621              MOV      r1,r4
-00013e  1c64              ADDS     r4,r4,#1
-000140  f60d307c          ADD      r0,sp,#0xb7c
-000144  5442              STRB     r2,[r0,r1]
+000124  f60d307c          ADD      r0,sp,#0xb7c
+000128  5443              STRB     r3,[r0,r1]
+00012a  f50d5080          ADD      r0,sp,#0x1000
+00012e  f89026be          LDRB     r2,[r0,#0x6be]
+000132  4621              MOV      r1,r4
+000134  1c64              ADDS     r4,r4,#1
+000136  f60d307c          ADD      r0,sp,#0xb7c
+00013a  5442              STRB     r2,[r0,r1]
+00013c  f50d5080          ADD      r0,sp,#0x1000
+000140  f89036bf          LDRB     r3,[r0,#0x6bf]
+000144  4621              MOV      r1,r4
+000146  1c64              ADDS     r4,r4,#1
+000148  f60d307c          ADD      r0,sp,#0xb7c
+00014c  5443              STRB     r3,[r0,r1]
 ;;;66     		a =(float)g_tBMP085.Press;
-000146  4842              LDR      r0,|L2.592|
-000148  ed900a07          VLDR     s0,[r0,#0x1c]
-00014c  eeb80ac0          VCVT.F32.S32 s0,s0
-000150  eeb08a40          VMOV.F32 s16,s0
+00014e  4844              LDR      r0,|L2.608|
+000150  ed900a07          VLDR     s0,[r0,#0x1c]
+000154  eeb80ac0          VCVT.F32.S32 s0,s0
+000158  eeb08a40          VMOV.F32 s16,s0
 ;;;67     		F2CA(A,a); /*float->charArray*/
-000154  eeb00a48          VMOV.F32 s0,s16
-000158  f24160bc          MOV      r0,#0x16bc
-00015c  4468              ADD      r0,r0,sp
-00015e  f7fffffe          BL       F2CA
+00015c  eeb00a48          VMOV.F32 s0,s16
+000160  f24160bc          MOV      r0,#0x16bc
+000164  4468              ADD      r0,r0,sp
+000166  f7fffffe          BL       F2CA
 ;;;68     		HalfHour[i++]=A[0];HalfHour[i++]=A[1];HalfHour[i++]=A[2];HalfHour[i++]=A[3];
-000162  f50d5080          ADD      r0,sp,#0x1000
-000166  f89026bc          LDRB     r2,[r0,#0x6bc]
-00016a  4620              MOV      r0,r4
-00016c  1c64              ADDS     r4,r4,#1
-00016e  f60d317c          ADD      r1,sp,#0xb7c
-000172  540a              STRB     r2,[r1,r0]
-000174  f50d5080          ADD      r0,sp,#0x1000
-000178  f89026bd          LDRB     r2,[r0,#0x6bd]
-00017c  4621              MOV      r1,r4
-00017e  1c64              ADDS     r4,r4,#1
-000180  f60d307c          ADD      r0,sp,#0xb7c
-000184  5442              STRB     r2,[r0,r1]
-000186  f50d5080          ADD      r0,sp,#0x1000
-00018a  f89026be          LDRB     r2,[r0,#0x6be]
-00018e  4620              MOV      r0,r4
-000190  1c64              ADDS     r4,r4,#1
-000192  f60d317c          ADD      r1,sp,#0xb7c
-000196  540a              STRB     r2,[r1,r0]
-000198  f50d5080          ADD      r0,sp,#0x1000
-00019c  f89026bf          LDRB     r2,[r0,#0x6bf]
-0001a0  4620              MOV      r0,r4
-0001a2  1c64              ADDS     r4,r4,#1
-0001a4  540a              STRB     r2,[r1,r0]
+00016a  f50d5080          ADD      r0,sp,#0x1000
+00016e  f89036bc          LDRB     r3,[r0,#0x6bc]
+000172  4621              MOV      r1,r4
+000174  1c64              ADDS     r4,r4,#1
+000176  f60d307c          ADD      r0,sp,#0xb7c
+00017a  5443              STRB     r3,[r0,r1]
+00017c  f50d5080          ADD      r0,sp,#0x1000
+000180  f89026bd          LDRB     r2,[r0,#0x6bd]
+000184  4620              MOV      r0,r4
+000186  1c64              ADDS     r4,r4,#1
+000188  f60d317c          ADD      r1,sp,#0xb7c
+00018c  540a              STRB     r2,[r1,r0]
+00018e  f50d5080          ADD      r0,sp,#0x1000
+000192  f89036be          LDRB     r3,[r0,#0x6be]
+000196  4621              MOV      r1,r4
+000198  1c64              ADDS     r4,r4,#1
+00019a  f60d307c          ADD      r0,sp,#0xb7c
+00019e  5443              STRB     r3,[r0,r1]
+0001a0  f50d5080          ADD      r0,sp,#0x1000
+0001a4  f89026bf          LDRB     r2,[r0,#0x6bf]
+0001a8  4621              MOV      r1,r4
+0001aa  1c64              ADDS     r4,r4,#1
+0001ac  f60d307c          ADD      r0,sp,#0xb7c
+0001b0  5442              STRB     r2,[r0,r1]
 ;;;69     		
 ;;;70     		
 ;;;71     		if (comGetChar(COM1, &cmd))	/* 从串口读入一个字符(非阻塞方式) */
-0001a6  a90e              ADD      r1,sp,#0x38
-0001a8  2000              MOVS     r0,#0
-0001aa  f7fffffe          BL       comGetChar
-0001ae  2800              CMP      r0,#0
-0001b0  d030              BEQ      |L2.532|
+0001b2  a90e              ADD      r1,sp,#0x38
+0001b4  2000              MOVS     r0,#0
+0001b6  f7fffffe          BL       comGetChar
+0001ba  2800              CMP      r0,#0
+0001bc  d032              BEQ      |L2.548|
 ;;;72     		{
 ;;;73     			switch (cmd)
-0001b2  f89d0038          LDRB     r0,[sp,#0x38]
-0001b6  2831              CMP      r0,#0x31
-0001b8  d127              BNE      |L2.522|
+0001be  f89d0038          LDRB     r0,[sp,#0x38]
+0001c2  2831              CMP      r0,#0x31
+0001c4  d129              BNE      |L2.538|
 ;;;74     			{
 ;;;75     				case '1':
 ;;;76     					x=0;
-0001ba  f04f0800          MOV      r8,#0
-;;;77     					for(k=j-48;k<=j;k++)
-0001be  f1a50630          SUB      r6,r5,#0x30
-0001c2  e01b              B        |L2.508|
-                  |L2.452|
+0001c6  f04f0800          MOV      r8,#0
+;;;77     					for(k=j-47;k<=j;k++)
+0001ca  f1a5062f          SUB      r6,r5,#0x2f
+0001ce  e01c              B        |L2.522|
+                  |L2.464|
 ;;;78     					{
 ;;;79     						if(k>=0)
-0001c4  2e00              CMP      r6,#0
-0001c6  db01              BLT      |L2.460|
+0001d0  2e00              CMP      r6,#0
+0001d2  db01              BLT      |L2.472|
 ;;;80     							m=k;
-0001c8  46b1              MOV      r9,r6
-0001ca  e001              B        |L2.464|
-                  |L2.460|
+0001d4  46b1              MOV      r9,r6
+0001d6  e001              B        |L2.476|
+                  |L2.472|
 ;;;81     						else
 ;;;82     							m=2*24*30+k;
-0001cc  f50669b4          ADD      r9,r6,#0x5a0
-                  |L2.464|
+0001d8  f50669b4          ADD      r9,r6,#0x5a0
+                  |L2.476|
 ;;;83     						sf_ReadBuffer(buf, m * g_tSF.PageSize, 16*6*30);	
-0001d0  4820              LDR      r0,|L2.596|
-0001d2  8b00              LDRH     r0,[r0,#0x18]  ; g_tSF
-0001d4  fb00f109          MUL      r1,r0,r9
-0001d8  f44f6234          MOV      r2,#0xb40
-0001dc  a80f              ADD      r0,sp,#0x3c
-0001de  f7fffffe          BL       sf_ReadBuffer
+0001dc  4821              LDR      r0,|L2.612|
+0001de  8b00              LDRH     r0,[r0,#0x18]  ; g_tSF
+0001e0  fb00f109          MUL      r1,r0,r9
+0001e4  f44f6234          MOV      r2,#0xb40
+0001e8  a80f              ADD      r0,sp,#0x3c
+0001ea  f7fffffe          BL       sf_ReadBuffer
 ;;;84     						for(n=0;n<16*6*30;n++)
-0001e2  2700              MOVS     r7,#0
-0001e4  e006              B        |L2.500|
-                  |L2.486|
+0001ee  2700              MOVS     r7,#0
+0001f0  e007              B        |L2.514|
+                  |L2.498|
 ;;;85     						{
-;;;86     							printf(" %02X",buf[x]);
-0001e6  a80f              ADD      r0,sp,#0x3c
-0001e8  f8101008          LDRB     r1,[r0,r8]
-0001ec  a01a              ADR      r0,|L2.600|
-0001ee  f7fffffe          BL       __2printf
-0001f2  1c7f              ADDS     r7,r7,#1              ;84
-                  |L2.500|
-0001f4  f5b76f34          CMP      r7,#0xb40             ;84
-0001f8  dbf5              BLT      |L2.486|
-0001fa  1c76              ADDS     r6,r6,#1              ;77
-                  |L2.508|
-0001fc  42ae              CMP      r6,r5                 ;77
-0001fe  dde1              BLE      |L2.452|
-;;;87     						}
-;;;88     					}
-;;;89     					printf("%d\r\n",x);
-000200  4641              MOV      r1,r8
-000202  a017              ADR      r0,|L2.608|
-000204  f7fffffe          BL       __2printf
-;;;90     					
-;;;91     					break;
-000208  e003              B        |L2.530|
+;;;86     							printf(" %02X",buf[n]);
+0001f2  a80f              ADD      r0,sp,#0x3c
+0001f4  5dc1              LDRB     r1,[r0,r7]
+0001f6  a01c              ADR      r0,|L2.616|
+0001f8  f7fffffe          BL       __2printf
+;;;87     							x++;
+0001fc  f1080801          ADD      r8,r8,#1
+000200  1c7f              ADDS     r7,r7,#1              ;84
+                  |L2.514|
+000202  f5b76f34          CMP      r7,#0xb40             ;84
+000206  dbf4              BLT      |L2.498|
+000208  1c76              ADDS     r6,r6,#1              ;77
                   |L2.522|
-;;;92     
+00020a  42ae              CMP      r6,r5                 ;77
+00020c  dde0              BLE      |L2.464|
+;;;88     						}
+;;;89     					}
+;;;90     					printf("\r\n%d\r\n%d",x,j);
+00020e  462a              MOV      r2,r5
+000210  4641              MOV      r1,r8
+000212  a017              ADR      r0,|L2.624|
+000214  f7fffffe          BL       __2printf
+;;;91     					
+;;;92     					break;
+000218  e003              B        |L2.546|
+                  |L2.538|
 ;;;93     
-;;;94     				default:
-;;;95     					printf("Wrong");	/* 无效命令，重新打印命令提示 */
-00020a  a017              ADR      r0,|L2.616|
-00020c  f7fffffe          BL       __2printf
-;;;96     					break;
-000210  bf00              NOP      
-                  |L2.530|
-000212  bf00              NOP                            ;91
-                  |L2.532|
-;;;97     
-;;;98     			}
-;;;99     		}
-;;;100    		
-;;;101    		if(i==16*6*30)
-000214  f5b46f34          CMP      r4,#0xb40
-000218  d115              BNE      |L2.582|
-;;;102    		{
-;;;103    			i=0;
-00021a  2400              MOVS     r4,#0
-;;;104    			/* 在j页中写入半小时的数据 */
-;;;105    			bsp_InitSFlash();
-00021c  f7fffffe          BL       bsp_InitSFlash
-;;;106    			if (sf_WriteBuffer(HalfHour, j * g_tSF.PageSize, 16*6*30) == 0)
-000220  480c              LDR      r0,|L2.596|
-000222  8b00              LDRH     r0,[r0,#0x18]  ; g_tSF
-000224  fb00f105          MUL      r1,r0,r5
-000228  f44f6234          MOV      r2,#0xb40
-00022c  f60d307c          ADD      r0,sp,#0xb7c
-000230  f7fffffe          BL       sf_WriteBuffer
-000234  b910              CBNZ     r0,|L2.572|
-;;;107    			{
-;;;108    				printf("写串行Flash出错！\r\n");
-000236  a00e              ADR      r0,|L2.624|
-000238  f7fffffe          BL       __2printf
-                  |L2.572|
-;;;109    			}
-;;;110    			j++;
-00023c  1c6d              ADDS     r5,r5,#1
-;;;111    			if(j==2*24*30)
-00023e  f5b56fb4          CMP      r5,#0x5a0
-000242  d100              BNE      |L2.582|
-;;;112    			{
-;;;113    				j=0;
-000244  2500              MOVS     r5,#0
-                  |L2.582|
-000246  e6ea              B        |L2.30|
-;;;114    			}
-;;;115    		
-;;;116    		}
-;;;117    		
-;;;118    	}
-;;;119    //	bsp_DelayMS(5000);
-;;;120    //	GetAD7705();
-;;;121    //	GetBMP085();
-;;;122    	
-;;;123    // Begin 采集数据转换为字符数组存储到B[16]中**************************************************************
-;;;124    //  a =volt1;
-;;;125    //	F2CA(A,a); /*float->charArray*/
-;;;126    //	B[0]=A[0];B[1]=A[1];B[2]=A[2];B[3]=A[3];
-;;;127    //	a =volt2;
-;;;128    //	F2CA(A,a); /*float->charArray*/
-;;;129    //	B[4]=A[0];B[5]=A[1];B[6]=A[2];B[7]=A[3];
-;;;130    //	a =(float)g_tBMP085.Temp;
-;;;131    //	F2CA(A,a); /*float->charArray*/
-;;;132    //	B[8]=A[0];B[9]=A[1];B[10]=A[2];B[11]=A[3];
-;;;133    //	a =(float)g_tBMP085.Press;
-;;;134    //	F2CA(A,a); /*float->charArray*/
-;;;135    //	B[12]=A[0];B[13]=A[1];B[14]=A[2];B[15]=A[3];
-;;;136    // End   采集数据转换为字符数组存储到B[16]中**************************************************************
-;;;137    	
-;;;138    //	DemoSpiFlash();		/* 串行Flash演示程序 */
-;;;139    	
-;;;140    //
-;;;141    }
-;;;142    
+;;;94     
+;;;95     				default:
+;;;96     					printf("Wrong");	/* 无效命令，重新打印命令提示 */
+00021a  a018              ADR      r0,|L2.636|
+00021c  f7fffffe          BL       __2printf
+;;;97     					break;
+000220  bf00              NOP      
+                  |L2.546|
+000222  bf00              NOP                            ;92
+                  |L2.548|
+;;;98     
+;;;99     			}
+;;;100    		}
+;;;101    		
+;;;102    		if(i==16*6*30)
+000224  f5b46f34          CMP      r4,#0xb40
+000228  d115              BNE      |L2.598|
+;;;103    		{
+;;;104    			i=0;
+00022a  2400              MOVS     r4,#0
+;;;105    			/* 在j页中写入半小时的数据 */
+;;;106    			bsp_InitSFlash();
+00022c  f7fffffe          BL       bsp_InitSFlash
+;;;107    			if (sf_WriteBuffer(HalfHour, j * g_tSF.PageSize, 16*6*30) == 0)
+000230  480c              LDR      r0,|L2.612|
+000232  8b00              LDRH     r0,[r0,#0x18]  ; g_tSF
+000234  fb00f105          MUL      r1,r0,r5
+000238  f44f6234          MOV      r2,#0xb40
+00023c  f60d307c          ADD      r0,sp,#0xb7c
+000240  f7fffffe          BL       sf_WriteBuffer
+000244  b910              CBNZ     r0,|L2.588|
+;;;108    			{
+;;;109    				printf("写串行Flash出错！\r\n");
+000246  a00f              ADR      r0,|L2.644|
+000248  f7fffffe          BL       __2printf
+                  |L2.588|
+;;;110    			}
+;;;111    			j++;
+00024c  1c6d              ADDS     r5,r5,#1
+;;;112    			if(j==2*24*30)
+00024e  f5b56fb4          CMP      r5,#0x5a0
+000252  d100              BNE      |L2.598|
+;;;113    			{
+;;;114    				j=0;
+000254  2500              MOVS     r5,#0
+                  |L2.598|
+000256  e6e2              B        |L2.30|
+;;;115    			}
+;;;116    		
+;;;117    		}
+;;;118    		
+;;;119    	}
+;;;120    //	bsp_DelayMS(5000);
+;;;121    //	GetAD7705();
+;;;122    //	GetBMP085();
+;;;123    	
+;;;124    // Begin 采集数据转换为字符数组存储到B[16]中**************************************************************
+;;;125    //  a =volt1;
+;;;126    //	F2CA(A,a); /*float->charArray*/
+;;;127    //	B[0]=A[0];B[1]=A[1];B[2]=A[2];B[3]=A[3];
+;;;128    //	a =volt2;
+;;;129    //	F2CA(A,a); /*float->charArray*/
+;;;130    //	B[4]=A[0];B[5]=A[1];B[6]=A[2];B[7]=A[3];
+;;;131    //	a =(float)g_tBMP085.Temp;
+;;;132    //	F2CA(A,a); /*float->charArray*/
+;;;133    //	B[8]=A[0];B[9]=A[1];B[10]=A[2];B[11]=A[3];
+;;;134    //	a =(float)g_tBMP085.Press;
+;;;135    //	F2CA(A,a); /*float->charArray*/
+;;;136    //	B[12]=A[0];B[13]=A[1];B[14]=A[2];B[15]=A[3];
+;;;137    // End   采集数据转换为字符数组存储到B[16]中**************************************************************
+;;;138    	
+;;;139    //	DemoSpiFlash();		/* 串行Flash演示程序 */
+;;;140    	
+;;;141    //
+;;;142    }
+;;;143    
                           ENDP
 
-                  |L2.584|
-                          DCD      volt1
-                  |L2.588|
-                          DCD      volt2
-                  |L2.592|
-                          DCD      g_tBMP085
-                  |L2.596|
-                          DCD      g_tSF
                   |L2.600|
-000258  20253032          DCB      " %02X",0
-00025c  5800    
-00025e  00                DCB      0
-00025f  00                DCB      0
+                          DCD      volt1
+                  |L2.604|
+                          DCD      volt2
                   |L2.608|
-000260  25640d0a          DCB      "%d\r\n",0
-000264  00      
-000265  00                DCB      0
-000266  00                DCB      0
-000267  00                DCB      0
+                          DCD      g_tBMP085
+                  |L2.612|
+                          DCD      g_tSF
                   |L2.616|
-000268  57726f6e          DCB      "Wrong",0
-00026c  6700    
+000268  20253032          DCB      " %02X",0
+00026c  5800    
 00026e  00                DCB      0
 00026f  00                DCB      0
                   |L2.624|
-000270  d0b4b4ae          DCB      208,180,180,174,208,208,"Flash",179,246,180,237,163,161,"\r"
-000274  d0d0466c
-000278  617368b3
-00027c  f6b4eda3
-000280  a10d    
-000282  0a00              DCB      "\n",0
+000270  0d0a2564          DCB      "\r\n%d\r\n%d",0
+000274  0d0a2564
+000278  00      
+000279  00                DCB      0
+00027a  00                DCB      0
+00027b  00                DCB      0
+                  |L2.636|
+00027c  57726f6e          DCB      "Wrong",0
+000280  6700    
+000282  00                DCB      0
+000283  00                DCB      0
+                  |L2.644|
+000284  d0b4b4ae          DCB      208,180,180,174,208,208,"Flash",179,246,180,237,163,161,"\r"
+000288  d0d0466c
+00028c  617368b3
+000290  f6b4eda3
+000294  a10d    
+000296  0a00              DCB      "\n",0
 
 ;*** Start embedded assembler ***
 

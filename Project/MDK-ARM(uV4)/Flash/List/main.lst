@@ -37101,7 +37101,7 @@ N			switch (cmd)
 N			{
 N				case '1':
 N					x=0;
-N					for(k=j-48;k<=j;k++)
+N					for(k=j-47;k<=j;k++)
 N					{
 N						if(k>=0)
 N							m=k;
@@ -37110,10 +37110,11 @@ N							m=2*24*30+k;
 N						sf_ReadBuffer(buf, m * g_tSF.PageSize, 16*6*30);	
 N						for(n=0;n<16*6*30;n++)
 N						{
-N							printf(" %02X",buf[x]);
+N							printf(" %02X",buf[n]);
+N							x++;
 N						}
 N					}
-N					printf("%d\r\n",x);
+N					printf("\r\n%d\r\n%d",x,j);
 N					
 N					break;
 N

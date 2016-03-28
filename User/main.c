@@ -74,7 +74,7 @@ int main(void)
 			{
 				case '1':
 					x=0;
-					for(k=j-48;k<=j;k++)
+					for(k=j-47;k<=j;k++)
 					{
 						if(k>=0)
 							m=k;
@@ -83,10 +83,11 @@ int main(void)
 						sf_ReadBuffer(buf, m * g_tSF.PageSize, 16*6*30);	
 						for(n=0;n<16*6*30;n++)
 						{
-							printf(" %02X",buf[x]);
+							printf(" %02X",buf[n]);
+							x++;
 						}
 					}
-					printf("%d\r\n",x);
+					printf("\r\n%d\r\n%d",x,j);
 					
 					break;
 

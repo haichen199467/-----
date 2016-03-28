@@ -369,10 +369,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>37</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>129</TopLine>
-      <CurrentLine>48</CurrentLine>
+      <TopLine>72</TopLine>
+      <CurrentLine>90</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\..\User\main.c</PathWithFileName>
       <FilenameWithoutPath>main.c</FilenameWithoutPath>
@@ -385,9 +385,9 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>26</ColumnNumber>
+      <ColumnNumber>27</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>177</TopLine>
+      <TopLine>182</TopLine>
       <CurrentLine>188</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\..\User\demo_spi_flash.c</PathWithFileName>
@@ -475,7 +475,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>152</TopLine>
+      <TopLine>153</TopLine>
       <CurrentLine>157</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\..\User\bsp_stm32f4xx\src\bsp_timer.c</PathWithFileName>
@@ -491,7 +491,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>197</TopLine>
+      <TopLine>198</TopLine>
       <CurrentLine>199</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\..\User\bsp_stm32f4xx\src\bsp_uart_fifo.c</PathWithFileName>
@@ -555,7 +555,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>415</TopLine>
+      <TopLine>405</TopLine>
       <CurrentLine>406</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\..\User\bsp_stm32f4xx\src\bsp_spi_flash.c</PathWithFileName>
@@ -571,7 +571,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>119</TopLine>
+      <TopLine>120</TopLine>
       <CurrentLine>122</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\..\User\bsp_stm32f4xx\src\bsp_bmp085.c</PathWithFileName>
