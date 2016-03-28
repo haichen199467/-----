@@ -20,6 +20,7 @@
 #include "demo_spi_flash.h"
 #include "mems_test.h"
 #include "ad7705_test.h"
+
 /* 定义例程名和例程发布日期 */
 #define EXAMPLE_NAME	"毕业设计"
 #define EXAMPLE_DATE	"2014-02-28"
@@ -44,6 +45,9 @@ int main(void)
 	*/
 	extern uint16_t adc1, adc2;
 	extern float volt1, volt2;
+	extern uint8_t aShowTime[50];
+	extern RTC_TimeTypeDef  RTC_TimeStructure;
+	extern RTC_DateTypeDef  RTC_DateStructure;
 	float a ;
 	unsigned char A[4],HalfHour[16*6*30],buf[16*6*30],cmd;
 	int i=0,j=0,k=0,m=0,n=0,x=0;
@@ -52,6 +56,13 @@ int main(void)
 	while(1)
 	{
 		bsp_Idle();
+		RTC_TimeShow();/*获取当前时间*/
+		while(RTC_TimeStructure.RTC_Seconds%10!=0)
+		{
+			bsp_Idle();
+			RTC_TimeShow();
+		}
+		printf("当前时间%s\r\n", aShowTime);
 		GetAD7705();
 		GetBMP085();
 		a =volt1;
@@ -98,6 +109,13 @@ int main(void)
 
 			}
 		}
+		
+//		  RTC_DateShow();
+// 			printf("%s\r\n", aShowTime);
+//			
+//			/* 显示时间 */
+// 			RTC_TimeShow();
+// 			printf("当前时间%s\r\n", aShowTime);
 		
 		if(i==16*6*30)
 		{

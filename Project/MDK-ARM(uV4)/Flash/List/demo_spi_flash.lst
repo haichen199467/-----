@@ -36950,6 +36950,37 @@ N#endif
 N
 N/***************************** 安富莱电子 www.armfly.com (END OF FILE) *********************************/
 L 65 "..\..\User\bsp_stm32f4xx\bsp.h" 2
+N#include "bsp_rtc.h"
+L 1 "..\..\User\bsp_stm32f4xx\inc\bsp_rtc.h" 1
+N/*
+N*********************************************************************************************************
+N*
+N*	模块名称 : RTC
+N*	文件名称 : bsp_rtc.c
+N*	版    本 : V1.0
+N*	说    明 : RTC底层驱动
+N*	Copyright (C), 2013-2014, 安富莱电子 www.armfly.com
+N*
+N*********************************************************************************************************
+N*/
+N
+N#ifndef __BSP_RTC_H
+N#define __BSP_RTC_H
+N#include "stm32f4xx.h"
+N
+Nvoid RTC_TimeShow(void);
+Nvoid RTC_AlarmShow(void);
+Nvoid RTC_TimeRegulate(void);
+Nuint8_t USART_Scanf(uint32_t value);
+Nvoid RTC_DateShow(void);
+Nvoid bsp_InitRTC(void);
+Nvoid RTC_Config(void);
+N
+N#endif
+N
+N/***************************** 安富莱电子 www.armfly.com (END OF FILE) *********************************/
+N
+L 66 "..\..\User\bsp_stm32f4xx\bsp.h" 2
 N//#include "bsp_wm8978.h"
 N//#include "bsp_fsmc_sram.h"
 N//#include "bsp_nand_flash.h"

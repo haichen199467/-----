@@ -45,4 +45,5 @@
 .\flash\obj\mems_test.o: ..\..\User\bsp_stm32f4xx\inc\bsp_i2c_gpio.h
 .\flash\obj\mems_test.o: ..\..\User\bsp_stm32f4xx\inc\bsp_bmp085.h
 .\flash\obj\mems_test.o: ..\..\User\bsp_stm32f4xx\inc\bsp_tm7705.h
+.\flash\obj\mems_test.o: ..\..\User\bsp_stm32f4xx\inc\bsp_rtc.h
 .\flash\obj\mems_test.o: ..\..\User\mems_test.h

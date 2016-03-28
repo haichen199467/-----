@@ -5,20 +5,20 @@
                           AREA ||i.bsp_Idle||, CODE, READONLY, ALIGN=1
 
                   bsp_Idle PROC
-;;;86     */
-;;;87     void bsp_Idle(void)
+;;;87     */
+;;;88     void bsp_Idle(void)
 000000  4770              BX       lr
-;;;88     {
-;;;89     	/* --- 喂狗 */
-;;;90     
-;;;91     	/* --- 让CPU进入休眠，由Systick定时中断唤醒或者其他中断唤醒 */
-;;;92     
-;;;93     	/* 对于 emWin 图形库，可以插入图形库需要的轮询函数 */
-;;;94     	//GUI_Exec();
-;;;95     
-;;;96     	/* 对于 uIP 协议实现，可以插入uip轮询函数 */
-;;;97     }
-;;;98     
+;;;89     {
+;;;90     	/* --- 喂狗 */
+;;;91     
+;;;92     	/* --- 让CPU进入休眠，由Systick定时中断唤醒或者其他中断唤醒 */
+;;;93     
+;;;94     	/* 对于 emWin 图形库，可以插入图形库需要的轮询函数 */
+;;;95     	//GUI_Exec();
+;;;96     
+;;;97     	/* 对于 uIP 协议实现，可以插入uip轮询函数 */
+;;;98     }
+;;;99     
                           ENDP
 
 
@@ -52,37 +52,39 @@
 000012  f7fffffe          BL       bsp_InitBMP085
 ;;;47     	bsp_InitSFlash();	/* 初始化SPI 串行Flash */
 000016  f7fffffe          BL       bsp_InitSFlash
-;;;48     }
-00001a  bd10              POP      {r4,pc}
-;;;49     
+;;;48     	bsp_InitRTC();
+00001a  f7fffffe          BL       bsp_InitRTC
+;;;49     }
+00001e  bd10              POP      {r4,pc}
+;;;50     
                           ENDP
 
 
                           AREA ||i.bsp_RunPer10ms||, CODE, READONLY, ALIGN=1
 
                   bsp_RunPer10ms PROC
-;;;58     */
-;;;59     void bsp_RunPer10ms(void)
+;;;59     */
+;;;60     void bsp_RunPer10ms(void)
 000000  b510              PUSH     {r4,lr}
-;;;60     {
-;;;61     	bsp_KeyScan();		/* 按键扫描 */
+;;;61     {
+;;;62     	bsp_KeyScan();		/* 按键扫描 */
 000002  f7fffffe          BL       bsp_KeyScan
-;;;62     }
+;;;63     }
 000006  bd10              POP      {r4,pc}
-;;;63     
+;;;64     
                           ENDP
 
 
                           AREA ||i.bsp_RunPer1ms||, CODE, READONLY, ALIGN=1
 
                   bsp_RunPer1ms PROC
-;;;72     */
-;;;73     void bsp_RunPer1ms(void)
+;;;73     */
+;;;74     void bsp_RunPer1ms(void)
 000000  4770              BX       lr
-;;;74     {
-;;;75     	//TOUCH_Scan();	/* 触摸扫描 */
-;;;76     }
-;;;77     
+;;;75     {
+;;;76     	//TOUCH_Scan();	/* 触摸扫描 */
+;;;77     }
+;;;78     
                           ENDP
 
 

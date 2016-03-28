@@ -45,6 +45,7 @@
 .\flash\obj\main.o: ..\..\User\bsp_stm32f4xx\inc\bsp_i2c_gpio.h
 .\flash\obj\main.o: ..\..\User\bsp_stm32f4xx\inc\bsp_bmp085.h
 .\flash\obj\main.o: ..\..\User\bsp_stm32f4xx\inc\bsp_tm7705.h
+.\flash\obj\main.o: ..\..\User\bsp_stm32f4xx\inc\bsp_rtc.h
 .\flash\obj\main.o: ..\..\User\demo_spi_flash.h
 .\flash\obj\main.o: ..\..\User\mems_test.h
 .\flash\obj\main.o: ..\..\User\ad7705_test.h

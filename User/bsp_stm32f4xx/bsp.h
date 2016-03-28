@@ -62,6 +62,7 @@
 //#include "bsp_bh1750.h"
 #include "bsp_bmp085.h"
 #include "bsp_tm7705.h"
+#include "bsp_rtc.h"
 //#include "bsp_wm8978.h"
 //#include "bsp_fsmc_sram.h"
 //#include "bsp_nand_flash.h"

@@ -45,6 +45,7 @@ void bsp_Init(void)
 	bsp_InitI2C();		/* 配置I2C总线 */
 	bsp_InitBMP085();
 	bsp_InitSFlash();	/* 初始化SPI 串行Flash */
+	bsp_InitRTC();
 }
 
 /*

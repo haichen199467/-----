@@ -420,6 +420,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\User\mems_test.c</FilePath>
             </File>
+            <File>
+              <FileName>ad7705_test.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\ad7705_test.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -474,6 +479,11 @@
               <FileName>bsp_i2c_gpio.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\User\bsp_stm32f4xx\src\bsp_i2c_gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_tm7705.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\bsp_stm32f4xx\src\bsp_tm7705.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -988,6 +998,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\User\mems_test.c</FilePath>
             </File>
+            <File>
+              <FileName>ad7705_test.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\ad7705_test.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1042,6 +1057,11 @@
               <FileName>bsp_i2c_gpio.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\User\bsp_stm32f4xx\src\bsp_i2c_gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_tm7705.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\bsp_stm32f4xx\src\bsp_tm7705.c</FilePath>
             </File>
           </Files>
         </Group>

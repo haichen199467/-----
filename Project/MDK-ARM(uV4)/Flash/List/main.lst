@@ -36950,6 +36950,37 @@ N#endif
 N
 N/***************************** 安富莱电子 www.armfly.com (END OF FILE) *********************************/
 L 65 "..\..\User\bsp_stm32f4xx\bsp.h" 2
+N#include "bsp_rtc.h"
+L 1 "..\..\User\bsp_stm32f4xx\inc\bsp_rtc.h" 1
+N/*
+N*********************************************************************************************************
+N*
+N*	模块名称 : RTC
+N*	文件名称 : bsp_rtc.c
+N*	版    本 : V1.0
+N*	说    明 : RTC底层驱动
+N*	Copyright (C), 2013-2014, 安富莱电子 www.armfly.com
+N*
+N*********************************************************************************************************
+N*/
+N
+N#ifndef __BSP_RTC_H
+N#define __BSP_RTC_H
+N#include "stm32f4xx.h"
+N
+Nvoid RTC_TimeShow(void);
+Nvoid RTC_AlarmShow(void);
+Nvoid RTC_TimeRegulate(void);
+Nuint8_t USART_Scanf(uint32_t value);
+Nvoid RTC_DateShow(void);
+Nvoid bsp_InitRTC(void);
+Nvoid RTC_Config(void);
+N
+N#endif
+N
+N/***************************** 安富莱电子 www.armfly.com (END OF FILE) *********************************/
+N
+L 66 "..\..\User\bsp_stm32f4xx\bsp.h" 2
 N//#include "bsp_wm8978.h"
 N//#include "bsp_fsmc_sram.h"
 N//#include "bsp_nand_flash.h"
@@ -37047,6 +37078,7 @@ N#endif
 N
 N/***************************** 安富莱电子 www.armfly.com (END OF FILE) *********************************/
 L 23 "..\..\User\main.c" 2
+N
 N/* 定义例程名和例程发布日期 */
 N#define EXAMPLE_NAME	"毕业设计"
 N#define EXAMPLE_DATE	"2014-02-28"
@@ -37071,6 +37103,9 @@ N	配置CPU系统的时钟，内部Flash访问时序，配置FSMC用于外部SRAM
 N	*/
 N	extern uint16_t adc1, adc2;
 N	extern float volt1, volt2;
+N	extern uint8_t aShowTime[50];
+N	extern RTC_TimeTypeDef  RTC_TimeStructure;
+N	extern RTC_DateTypeDef  RTC_DateStructure;
 N	float a ;
 N	unsigned char A[4],HalfHour[16*6*30],buf[16*6*30],cmd;
 N	int i=0,j=0,k=0,m=0,n=0,x=0;
@@ -37079,6 +37114,13 @@ N	PrintfLogo();	/* 打印例程信息到串口1 */
 N	while(1)
 N	{
 N		bsp_Idle();
+N		RTC_TimeShow();/*获取当前时间*/
+N		while(RTC_TimeStructure.RTC_Seconds%10!=0)
+N		{
+N			bsp_Idle();
+N			RTC_TimeShow();
+N		}
+N		printf("当前时间%s\r\n", aShowTime);
 N		GetAD7705();
 N		GetBMP085();
 N		a =volt1;
@@ -37125,6 +37167,13 @@ N					break;
 N
 N			}
 N		}
+N		
+N//		  RTC_DateShow();
+N// 			printf("%s\r\n", aShowTime);
+N//			
+N//			/* 显示时间 */
+N// 			RTC_TimeShow();
+N// 			printf("当前时间%s\r\n", aShowTime);
 N		
 N		if(i==16*6*30)
 N		{

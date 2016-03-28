@@ -485,6 +485,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\User\bsp_stm32f4xx\src\bsp_tm7705.c</FilePath>
             </File>
+            <File>
+              <FileName>bsp_rtc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\bsp_stm32f4xx\src\bsp_rtc.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -529,6 +534,41 @@
               <FileName>stm32f4xx_spi.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_dma.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_iwdg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_iwdg.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_tim.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_wwdg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_wwdg.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_exti.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_exti.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_rtc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rtc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_pwr.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_pwr.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1063,6 +1103,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\User\bsp_stm32f4xx\src\bsp_tm7705.c</FilePath>
             </File>
+            <File>
+              <FileName>bsp_rtc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\bsp_stm32f4xx\src\bsp_rtc.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1107,6 +1152,41 @@
               <FileName>stm32f4xx_spi.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_dma.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_iwdg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_iwdg.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_tim.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_wwdg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_wwdg.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_exti.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_exti.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_rtc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rtc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_pwr.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_pwr.c</FilePath>
             </File>
           </Files>
         </Group>
