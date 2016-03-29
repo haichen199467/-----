@@ -62,6 +62,7 @@ int main(void)
 			bsp_Idle();
 			RTC_TimeShow();
 		}
+		/*在页头记录时间*/
 		if(i==0)
 		{ RTC_DateShow();
 			HalfHour[i++]=RTC_DateStructure.RTC_Year;
@@ -72,10 +73,11 @@ int main(void)
 			HalfHour[i++]=RTC_TimeStructure.RTC_Seconds;
 		}
 		RTC_TimeShow();
-		printf("当前时间%s\r\n", aShowTime);
 		bsp_DelayMS(1000);
+		/*采集数据*/
 		GetAD7705();
 		GetBMP085();
+		/*数据转换为Flash易存储形式*/
 		a =volt1;
 		F2CA(A,a); /*float->charArray*/
 		HalfHour[i++]=A[0];HalfHour[i++]=A[1];HalfHour[i++]=A[2];HalfHour[i++]=A[3];
@@ -89,84 +91,151 @@ int main(void)
 		F2CA(A,a); /*float->charArray*/
 		HalfHour[i++]=A[0];HalfHour[i++]=A[1];HalfHour[i++]=A[2];HalfHour[i++]=A[3];
 		
-		
+		/*判断是否需要相应上位机*/
 		if (comGetChar(COM1, &cmd))	/* 从串口读入一个字符(非阻塞方式) */
 		{
 			switch (cmd)
 			{
 				case '1':
-					x=0;
-					for(k=j-48;k<=j;k++)
+					/*输出SPI Flash中的数据*/
+					for(k=j-47;k<j;k++)
 					{
+						/*解决k小于0的问题*/
 						if(k>=0)
 							m=k;
 						else
 							m=2*24*30+k;
-						sf_ReadBuffer(buf, m * g_tSF.PageSize, 16*6*30+6);	
-						for(n=0;n<16*6*30+6;n++)
+						/*输出 n*半小时 前 测量数据*/
+						sf_ReadBuffer(buf, m * g_tSF.PageSize+i-16, 16);	
+						for(n=0;n<16;n++)
 						{
 							printf(" %02X",buf[n]);
+						}
+						printf("\r\n");
+						
+					}
+					/*打印最新采集到的数据*/
+					for(n=i-16;n<i;n++)
+						{
+							printf(" %02X",HalfHour[n]);
 							x++;
 						}
+					printf("\r\n");
+					/*打印当前时间*/
+					printf(" %d %d %d %d %d %d\r\n",
+					RTC_DateStructure.RTC_Year,
+					RTC_DateStructure.RTC_Month,
+					RTC_DateStructure.RTC_Date,
+					RTC_TimeStructure.RTC_Hours,
+					RTC_TimeStructure.RTC_Minutes,
+					RTC_TimeStructure.RTC_Seconds);
+					break;
+						
+				case '2':
+					/*输出SPI Flash中的数据*/
+					for(k=j-335;k<j;k++)
+					{
+						/*解决k小于0的问题*/
+						if(k>=0)
+							m=k;
+						else
+							m=2*24*30+k;
+						/*输出 n*半小时 前 测量数据*/
+						sf_ReadBuffer(buf, m * g_tSF.PageSize+i-16, 16);	
+						for(n=0;n<16;n++)
+						{
+							printf(" %02X",buf[n]);
+						}
+						printf("\r\n");
+						
 					}
-					printf("\r\n%d\r\n%d",x,j);
+					/*打印最新采集到的数据*/
+					for(n=i-16;n<i;n++)
+						{
+							printf(" %02X",HalfHour[n]);
+							x++;
+						}
+					printf("\r\n");
+					/*打印当前时间*/
+					printf(" %d %d %d %d %d %d\r\n",
+					RTC_DateStructure.RTC_Year,
+					RTC_DateStructure.RTC_Month,
+					RTC_DateStructure.RTC_Date,
+					RTC_TimeStructure.RTC_Hours,
+					RTC_TimeStructure.RTC_Minutes,
+					RTC_TimeStructure.RTC_Seconds);
+					break;
+						
+			case '3':
+					/*输出SPI Flash中的数据*/
+					for(k=j-1439;k<j;k++)
+					{
+						/*解决k小于0的问题*/
+						if(k>=0)
+							m=k;
+						else
+							m=2*24*30+k;
+						/*输出 n*半小时 前 测量数据*/
+						sf_ReadBuffer(buf, m * g_tSF.PageSize+i-16, 16);	
+						for(n=0;n<16;n++)
+						{
+							printf(" %02X",buf[n]);
+						}
+						printf("\r\n");
+						
+					}
+					/*打印最新采集到的数据*/
+					for(n=i-16;n<i;n++)
+						{
+							printf(" %02X",HalfHour[n]);
+							x++;
+						}
+					printf("\r\n");
+					/*打印当前时间*/
+					printf(" %d %d %d %d %d %d\r\n",
+					RTC_DateStructure.RTC_Year,
+					RTC_DateStructure.RTC_Month,
+					RTC_DateStructure.RTC_Date,
+					RTC_TimeStructure.RTC_Hours,
+					RTC_TimeStructure.RTC_Minutes,
+					RTC_TimeStructure.RTC_Seconds);
 					break;
 
-
+			case '4':
+					printf("%d,%d,%d,%d,%d,%2d,%10f,%10f,%10d,%10d \r\n",
+					RTC_DateStructure.RTC_Year,
+					RTC_DateStructure.RTC_Month,
+					RTC_DateStructure.RTC_Date,
+					RTC_TimeStructure.RTC_Hours,
+					RTC_TimeStructure.RTC_Minutes,
+					RTC_TimeStructure.RTC_Seconds,volt1,volt2,g_tBMP085.Temp,g_tBMP085.Press);
+					break;
+						
 				default:
 					printf("Wrong");	/* 无效命令，重新打印命令提示 */
 					break;
 
 			}
 		}
-		
-//		  RTC_DateShow();
-// 			printf("%s\r\n", aShowTime);
-//			
-//			/* 显示时间 */
-// 			RTC_TimeShow();
-// 			printf("当前时间%s\r\n", aShowTime);
-		
-		if(i==16*6*30)
+		/*半小时数据采集完成*/
+		/* 在j页中写入半小时的数据 */
+		if(i==16*6*30+6)
 		{
 			i=0;
-			/* 在j页中写入半小时的数据 */
 			bsp_InitSFlash();
 			if (sf_WriteBuffer(HalfHour, j * g_tSF.PageSize, 16*6*30+6) == 0)
 			{
 				printf("写串行Flash出错！\r\n");
 			}
 			j++;
+			/*判断是否超出存储空间,超出复位0*/
 			if(j==2*24*30)
 			{
 				j=0;
 			}
 		
 		}
-		
 	}
-//	bsp_DelayMS(5000);
-//	GetAD7705();
-//	GetBMP085();
-	
-// Begin 采集数据转换为字符数组存储到B[16]中**************************************************************
-//  a =volt1;
-//	F2CA(A,a); /*float->charArray*/
-//	B[0]=A[0];B[1]=A[1];B[2]=A[2];B[3]=A[3];
-//	a =volt2;
-//	F2CA(A,a); /*float->charArray*/
-//	B[4]=A[0];B[5]=A[1];B[6]=A[2];B[7]=A[3];
-//	a =(float)g_tBMP085.Temp;
-//	F2CA(A,a); /*float->charArray*/
-//	B[8]=A[0];B[9]=A[1];B[10]=A[2];B[11]=A[3];
-//	a =(float)g_tBMP085.Press;
-//	F2CA(A,a); /*float->charArray*/
-//	B[12]=A[0];B[13]=A[1];B[14]=A[2];B[15]=A[3];
-// End   采集数据转换为字符数组存储到B[16]中**************************************************************
-	
-//	DemoSpiFlash();		/* 串行Flash演示程序 */
-	
-//
 }
 
 /*
@@ -188,6 +257,11 @@ static void PrintfLogo(void)
 	/* 打印ST固件库版本，这3个定义宏在stm32f10x.h文件中 */
 	printf("* 固件库版本 : V%d.%d.%d (STM32F4xx_StdPeriph_Driver)\r\n", __STM32F4XX_STDPERIPH_VERSION_MAIN,
 			__STM32F4XX_STDPERIPH_VERSION_SUB1,__STM32F4XX_STDPERIPH_VERSION_SUB2);
+	/*功能描述*/
+	printf("* 按“1”显示最近24小时数据\r\n");	
+	printf("* 按“2”显示最近一周的数据\r\n");	
+	printf("* 按“3”显示最近一个月数据\r\n");	
+	printf("* 按“4”显示最新采集的数据\r\n");
 	printf("* \n\r");	/* 打印一行空格 */
 	printf("*************************************************************\r\n");
 }
