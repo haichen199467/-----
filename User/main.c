@@ -49,7 +49,7 @@ int main(void)
 	extern RTC_TimeTypeDef  RTC_TimeStructure;
 	extern RTC_DateTypeDef  RTC_DateStructure;
 	float a ;
-	unsigned char A[4],HalfHour[16*6*30],buf[16*6*30],cmd;
+	unsigned char A[4],HalfHour[16*6*30+6],buf[16*6*30+6],cmd;
 	int i=0,j=0,k=0,m=0,n=0,x=0;
 	bsp_Init();		/* 硬件初始化 */
 	PrintfLogo();	/* 打印例程信息到串口1 */
@@ -62,7 +62,18 @@ int main(void)
 			bsp_Idle();
 			RTC_TimeShow();
 		}
+		if(i==0)
+		{ RTC_DateShow();
+			HalfHour[i++]=RTC_DateStructure.RTC_Year;
+			HalfHour[i++]=RTC_DateStructure.RTC_Month;
+			HalfHour[i++]=RTC_DateStructure.RTC_Date;
+			HalfHour[i++]=RTC_TimeStructure.RTC_Hours;
+			HalfHour[i++]=RTC_TimeStructure.RTC_Minutes;
+			HalfHour[i++]=RTC_TimeStructure.RTC_Seconds;
+		}
+		RTC_TimeShow();
 		printf("当前时间%s\r\n", aShowTime);
+		bsp_DelayMS(1000);
 		GetAD7705();
 		GetBMP085();
 		a =volt1;
@@ -85,21 +96,20 @@ int main(void)
 			{
 				case '1':
 					x=0;
-					for(k=j-47;k<=j;k++)
+					for(k=j-48;k<=j;k++)
 					{
 						if(k>=0)
 							m=k;
 						else
 							m=2*24*30+k;
-						sf_ReadBuffer(buf, m * g_tSF.PageSize, 16*6*30);	
-						for(n=0;n<16*6*30;n++)
+						sf_ReadBuffer(buf, m * g_tSF.PageSize, 16*6*30+6);	
+						for(n=0;n<16*6*30+6;n++)
 						{
 							printf(" %02X",buf[n]);
 							x++;
 						}
 					}
 					printf("\r\n%d\r\n%d",x,j);
-					
 					break;
 
 
@@ -122,7 +132,7 @@ int main(void)
 			i=0;
 			/* 在j页中写入半小时的数据 */
 			bsp_InitSFlash();
-			if (sf_WriteBuffer(HalfHour, j * g_tSF.PageSize, 16*6*30) == 0)
+			if (sf_WriteBuffer(HalfHour, j * g_tSF.PageSize, 16*6*30+6) == 0)
 			{
 				printf("写串行Flash出错！\r\n");
 			}

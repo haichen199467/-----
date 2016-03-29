@@ -37107,7 +37107,7 @@ N	extern uint8_t aShowTime[50];
 N	extern RTC_TimeTypeDef  RTC_TimeStructure;
 N	extern RTC_DateTypeDef  RTC_DateStructure;
 N	float a ;
-N	unsigned char A[4],HalfHour[16*6*30],buf[16*6*30],cmd;
+N	unsigned char A[4],HalfHour[16*6*30+6],buf[16*6*30+6],cmd;
 N	int i=0,j=0,k=0,m=0,n=0,x=0;
 N	bsp_Init();		/* 硬件初始化 */
 N	PrintfLogo();	/* 打印例程信息到串口1 */
@@ -37120,7 +37120,18 @@ N		{
 N			bsp_Idle();
 N			RTC_TimeShow();
 N		}
+N		if(i==0)
+N		{ RTC_DateShow();
+N			HalfHour[i++]=RTC_DateStructure.RTC_Year;
+N			HalfHour[i++]=RTC_DateStructure.RTC_Month;
+N			HalfHour[i++]=RTC_DateStructure.RTC_Date;
+N			HalfHour[i++]=RTC_TimeStructure.RTC_Hours;
+N			HalfHour[i++]=RTC_TimeStructure.RTC_Minutes;
+N			HalfHour[i++]=RTC_TimeStructure.RTC_Seconds;
+N		}
+N		RTC_TimeShow();
 N		printf("当前时间%s\r\n", aShowTime);
+N		bsp_DelayMS(1000);
 N		GetAD7705();
 N		GetBMP085();
 N		a =volt1;
@@ -37143,21 +37154,20 @@ N			switch (cmd)
 N			{
 N				case '1':
 N					x=0;
-N					for(k=j-47;k<=j;k++)
+N					for(k=j-48;k<=j;k++)
 N					{
 N						if(k>=0)
 N							m=k;
 N						else
 N							m=2*24*30+k;
-N						sf_ReadBuffer(buf, m * g_tSF.PageSize, 16*6*30);	
-N						for(n=0;n<16*6*30;n++)
+N						sf_ReadBuffer(buf, m * g_tSF.PageSize, 16*6*30+6);	
+N						for(n=0;n<16*6*30+6;n++)
 N						{
 N							printf(" %02X",buf[n]);
 N							x++;
 N						}
 N					}
 N					printf("\r\n%d\r\n%d",x,j);
-N					
 N					break;
 N
 N
@@ -37180,7 +37190,7 @@ N		{
 N			i=0;
 N			/* 在j页中写入半小时的数据 */
 N			bsp_InitSFlash();
-N			if (sf_WriteBuffer(HalfHour, j * g_tSF.PageSize, 16*6*30) == 0)
+N			if (sf_WriteBuffer(HalfHour, j * g_tSF.PageSize, 16*6*30+6) == 0)
 N			{
 N				printf("写串行Flash出错！\r\n");
 N			}
