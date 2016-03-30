@@ -37115,11 +37115,11 @@ N	while(1)
 N	{
 N		bsp_Idle();
 N		RTC_TimeShow();/*获取当前时间*/
-N		while(RTC_TimeStructure.RTC_Seconds%10!=0)
-N		{
-N			bsp_Idle();
-N			RTC_TimeShow();
-N		}
+N//		while(RTC_TimeStructure.RTC_Seconds%10!=0)
+N//		{
+N//			bsp_Idle();
+N//			RTC_TimeShow();
+N//		}
 N		/*在页头记录时间*/
 N		if(i==0)
 N		{ RTC_DateShow();
@@ -37131,7 +37131,7 @@ N			HalfHour[i++]=RTC_TimeStructure.RTC_Minutes;
 N			HalfHour[i++]=RTC_TimeStructure.RTC_Seconds;
 N		}
 N		RTC_TimeShow();
-N		bsp_DelayMS(1000);
+N//		bsp_DelayMS(1000);
 N		/*采集数据*/
 N		GetAD7705();
 N		GetBMP085();
@@ -37149,6 +37149,22 @@ N		a =(float)g_tBMP085.Press;
 N		F2CA(A,a); /*float->charArray*/
 N		HalfHour[i++]=A[0];HalfHour[i++]=A[1];HalfHour[i++]=A[2];HalfHour[i++]=A[3];
 N		
+N		
+N		
+N		/*运行状态记录*/
+N		printf(" %d %d %d %d %2d %2d     ",
+N					RTC_DateStructure.RTC_Year,
+N					RTC_DateStructure.RTC_Month,
+N					RTC_DateStructure.RTC_Date,
+N					RTC_TimeStructure.RTC_Hours,
+N					RTC_TimeStructure.RTC_Minutes,
+N					RTC_TimeStructure.RTC_Seconds);
+N		printf("%d\r\n",i);
+N		
+N		
+N		
+N		
+N		
 N		/*判断是否需要相应上位机*/
 N		if (comGetChar(COM1, &cmd))	/* 从串口读入一个字符(非阻塞方式) */
 N		{
@@ -37164,6 +37180,7 @@ N							m=k;
 N						else
 N							m=2*24*30+k;
 N						/*输出 n*半小时 前 测量数据*/
+N						bsp_InitSFlash();	/* 初始化SPI 串行Flash */
 N						sf_ReadBuffer(buf, m * g_tSF.PageSize+i-16, 16);	
 N						for(n=0;n<16;n++)
 N						{
@@ -37199,6 +37216,7 @@ N							m=k;
 N						else
 N							m=2*24*30+k;
 N						/*输出 n*半小时 前 测量数据*/
+N						bsp_InitSFlash();	/* 初始化SPI 串行Flash */
 N						sf_ReadBuffer(buf, m * g_tSF.PageSize+i-16, 16);	
 N						for(n=0;n<16;n++)
 N						{
@@ -37234,6 +37252,7 @@ N							m=k;
 N						else
 N							m=2*24*30+k;
 N						/*输出 n*半小时 前 测量数据*/
+N						bsp_InitSFlash();	/* 初始化SPI 串行Flash */
 N						sf_ReadBuffer(buf, m * g_tSF.PageSize+i-16, 16);	
 N						for(n=0;n<16;n++)
 N						{
@@ -37285,6 +37304,7 @@ N			if (sf_WriteBuffer(HalfHour, j * g_tSF.PageSize, 16*6*30+6) == 0)
 N			{
 N				printf("写串行Flash出错！\r\n");
 N			}
+N			printf("在%d页中写入\r\n",j);
 N			j++;
 N			/*判断是否超出存储空间,超出复位0*/
 N			if(j==2*24*30)

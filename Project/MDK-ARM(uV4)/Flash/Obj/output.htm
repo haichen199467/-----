@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Flash\Obj\output.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Flash\Obj\output.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Tue Mar 29 16:17:03 2016
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Wed Mar 30 10:53:37 2016
 <BR><P>
 <H3>Maximum Stack Usage =       5968 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1048,7 +1048,6 @@ Global Symbols
 <LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_Idle
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_InitTM7705
-<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TM7705_ResetHard
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMP085_WaitConvert
 </UL>
@@ -1137,10 +1136,10 @@ Global Symbols
 <P><STRONG><a name="[8d]"></a>bsp_InitTM7705</STRONG> (Thumb, 224 bytes, Stack size 16 bytes, bsp_tm7705.o(i.bsp_InitTM7705))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = bsp_InitTM7705 &rArr; TM7705_CalibSelf &rArr; TM7705_WaitDRDY &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHB1PeriphClockCmd
+<BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_DelayMS
+<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHB1PeriphClockCmd
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TM7705_CalibSelf
-<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_DelayMS
 <LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
 <LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TM7705_ReadReg
 <LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TM7705_WriteByte
@@ -1300,7 +1299,7 @@ Global Symbols
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMP085_Read2Bytes
 </UL>
 
-<P><STRONG><a name="[5c]"></a>main</STRONG> (Thumb, 1214 bytes, Stack size 5848 bytes, main.o(i.main))
+<P><STRONG><a name="[5c]"></a>main</STRONG> (Thumb, 1256 bytes, Stack size 5848 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 5968<LI>Call Chain = main &rArr; sf_WriteBuffer &rArr; sf_AutoWritePage &rArr; sf_PageWrite &rArr; sf_WriteEnable &rArr; sf_SendByte
 </UL>
 <BR>[Calls]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sf_WriteBuffer
@@ -1309,7 +1308,6 @@ Global Symbols
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_InitSFlash
 <LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_Init
 <LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_Idle
-<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_DelayMS
 <LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
 <LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_TimeShow
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_DateShow
@@ -1454,8 +1452,8 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[dd]"></a>__set_PRIMASK</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, bsp_timer.o(i.__set_PRIMASK))
-<BR><BR>[Called By]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_StartAutoTimer
-<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_DelayMS
+<BR><BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_DelayMS
+<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_StartAutoTimer
 </UL>
 
 <P><STRONG><a name="[b8]"></a>bsp_SoftTimerDec</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, bsp_timer.o(i.bsp_SoftTimerDec))

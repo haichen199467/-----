@@ -91,6 +91,22 @@ int main(void)
 		F2CA(A,a); /*float->charArray*/
 		HalfHour[i++]=A[0];HalfHour[i++]=A[1];HalfHour[i++]=A[2];HalfHour[i++]=A[3];
 		
+		
+		
+//		/*运行状态记录*/
+//		printf(" %d %d %d %d %2d %2d     ",
+//					RTC_DateStructure.RTC_Year,
+//					RTC_DateStructure.RTC_Month,
+//					RTC_DateStructure.RTC_Date,
+//					RTC_TimeStructure.RTC_Hours,
+//					RTC_TimeStructure.RTC_Minutes,
+//					RTC_TimeStructure.RTC_Seconds);
+//		printf("%d\r\n",i);
+		
+		
+		
+		
+		
 		/*判断是否需要相应上位机*/
 		if (comGetChar(COM1, &cmd))	/* 从串口读入一个字符(非阻塞方式) */
 		{
@@ -106,6 +122,7 @@ int main(void)
 						else
 							m=2*24*30+k;
 						/*输出 n*半小时 前 测量数据*/
+						bsp_InitSFlash();	/* 初始化SPI 串行Flash */
 						sf_ReadBuffer(buf, m * g_tSF.PageSize+i-16, 16);	
 						for(n=0;n<16;n++)
 						{
@@ -141,6 +158,7 @@ int main(void)
 						else
 							m=2*24*30+k;
 						/*输出 n*半小时 前 测量数据*/
+						bsp_InitSFlash();	/* 初始化SPI 串行Flash */
 						sf_ReadBuffer(buf, m * g_tSF.PageSize+i-16, 16);	
 						for(n=0;n<16;n++)
 						{
@@ -176,6 +194,7 @@ int main(void)
 						else
 							m=2*24*30+k;
 						/*输出 n*半小时 前 测量数据*/
+						bsp_InitSFlash();	/* 初始化SPI 串行Flash */
 						sf_ReadBuffer(buf, m * g_tSF.PageSize+i-16, 16);	
 						for(n=0;n<16;n++)
 						{
