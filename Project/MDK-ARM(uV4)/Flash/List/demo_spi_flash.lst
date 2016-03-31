@@ -37026,7 +37026,7 @@ N
 N/* ¹©Íâ²¿µ÷ÓÃµÄº¯ÊýÉùÃ÷ */
 Nvoid DemoSpiFlash(void);
 Nvoid F2CA(unsigned char * charArray,float floatVariable);
-Nvoid CA2F(unsigned char * charArray,float floatVariable);
+Nvoid CA2F(unsigned char * charArray,float* floatVariable);
 N#endif
 N
 N
@@ -37469,17 +37469,19 @@ N*	ÐÎ    ²Î£ºfloat floatVariable:´æ´¢float, unsigned char charArray[4] ´ý×ª»»×Ö½
 N*	·µ »Ø Öµ: ÎÞ
 N*********************************************************************************************************
 N*/
-Nvoid CA2F(unsigned char * charArray,float floatVariable)
+Nvoid CA2F(unsigned char * charArray,float* floatVariable)
 N{	
 Nunsigned char  i;   
 Nvoid   *pf;       
 Nunsigned char* px = charArray;    
-Npf = &floatVariable;  
+Npf = floatVariable;  
 N	
 Nfor(i=0;i<4;i++)  
 N{  
 N    *((unsigned char*)pf+i)=*(px+i);       
 N}   
+N
+N
 N}
 N/***************************** Hayden end *********************************/
 N

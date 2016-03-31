@@ -428,17 +428,19 @@ for(i=0;i<4;i++)
 *	·µ »Ø Öµ: ÎÞ
 *********************************************************************************************************
 */
-void CA2F(unsigned char * charArray,float floatVariable)
+void CA2F(unsigned char * charArray,float* floatVariable)
 {	
 unsigned char  i;   
 void   *pf;       
 unsigned char* px = charArray;    
-pf = &floatVariable;  
+pf = floatVariable;  
 	
 for(i=0;i<4;i++)  
 {  
     *((unsigned char*)pf+i)=*(px+i);       
 }   
+
+
 }
 /***************************** Hayden end *********************************/
 

@@ -369,10 +369,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>5</ColumnNumber>
+      <ColumnNumber>19</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>45</TopLine>
-      <CurrentLine>64</CurrentLine>
+      <TopLine>26</TopLine>
+      <CurrentLine>77</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\..\User\main.c</PathWithFileName>
       <FilenameWithoutPath>main.c</FilenameWithoutPath>
@@ -385,10 +385,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>5</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>37</TopLine>
-      <CurrentLine>47</CurrentLine>
+      <TopLine>427</TopLine>
+      <CurrentLine>436</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\..\User\demo_spi_flash.c</PathWithFileName>
       <FilenameWithoutPath>demo_spi_flash.c</FilenameWithoutPath>
@@ -403,7 +403,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>619</TopLine>
+      <TopLine>499</TopLine>
       <CurrentLine>629</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\..\User\mems_test.c</PathWithFileName>
@@ -419,7 +419,7 @@
       <Focus>0</Focus>
       <ColumnNumber>18</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>14</TopLine>
+      <TopLine>1</TopLine>
       <CurrentLine>18</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\..\User\ad7705_test.c</PathWithFileName>
@@ -539,7 +539,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>78</TopLine>
+      <TopLine>81</TopLine>
       <CurrentLine>88</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\..\User\bsp_stm32f4xx\bsp.c</PathWithFileName>
@@ -555,7 +555,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>755</TopLine>
+      <TopLine>768</TopLine>
       <CurrentLine>774</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\..\User\bsp_stm32f4xx\src\bsp_spi_flash.c</PathWithFileName>
@@ -571,7 +571,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>107</TopLine>
+      <TopLine>108</TopLine>
       <CurrentLine>112</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\..\User\bsp_stm32f4xx\src\bsp_bmp085.c</PathWithFileName>
@@ -619,7 +619,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>222</TopLine>
+      <TopLine>1</TopLine>
       <CurrentLine>228</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\..\User\bsp_stm32f4xx\src\bsp_rtc.c</PathWithFileName>

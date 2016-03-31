@@ -20,7 +20,7 @@
 /* 供外部调用的函数声明 */
 void DemoSpiFlash(void);
 void F2CA(unsigned char * charArray,float floatVariable);
-void CA2F(unsigned char * charArray,float floatVariable);
+void CA2F(unsigned char * charArray,float* floatVariable);
 #endif
 
 

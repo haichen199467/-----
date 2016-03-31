@@ -6,35 +6,36 @@
 
                   CA2F PROC
 ;;;430    */
-;;;431    void CA2F(unsigned char * charArray,float floatVariable)
-000000  b511              PUSH     {r0,r4,lr}
+;;;431    void CA2F(unsigned char * charArray,float* floatVariable)
+000000  b530              PUSH     {r4,r5,lr}
 ;;;432    {	
-000002  ed2d0b02          VPUSH    {d0}
-000006  4601              MOV      r1,r0
+000002  4602              MOV      r2,r0
 ;;;433    unsigned char  i;   
 ;;;434    void   *pf;       
 ;;;435    unsigned char* px = charArray;    
-000008  460b              MOV      r3,r1
-;;;436    pf = &floatVariable;  
-00000a  466a              MOV      r2,sp
+000004  4614              MOV      r4,r2
+;;;436    pf = floatVariable;  
+000006  460b              MOV      r3,r1
 ;;;437    	
 ;;;438    for(i=0;i<4;i++)  
-00000c  2000              MOVS     r0,#0
-00000e  e003              B        |L1.24|
-                  |L1.16|
+000008  2000              MOVS     r0,#0
+00000a  e003              B        |L1.20|
+                  |L1.12|
 ;;;439    {  
 ;;;440        *((unsigned char*)pf+i)=*(px+i);       
-000010  5c1c              LDRB     r4,[r3,r0]
-000012  5414              STRB     r4,[r2,r0]
-000014  1c44              ADDS     r4,r0,#1              ;438
-000016  b2e0              UXTB     r0,r4                 ;438
-                  |L1.24|
-000018  2804              CMP      r0,#4                 ;438
-00001a  dbf9              BLT      |L1.16|
+00000c  5c25              LDRB     r5,[r4,r0]
+00000e  541d              STRB     r5,[r3,r0]
+000010  1c45              ADDS     r5,r0,#1              ;438
+000012  b2e8              UXTB     r0,r5                 ;438
+                  |L1.20|
+000014  2804              CMP      r0,#4                 ;438
+000016  dbf9              BLT      |L1.12|
 ;;;441    }   
-;;;442    }
-00001c  bd1e              POP      {r1-r4,pc}
-;;;443    /***************************** Hayden end *********************************/
+;;;442    
+;;;443    
+;;;444    }
+000018  bd30              POP      {r4,r5,pc}
+;;;445    /***************************** Hayden end *********************************/
                           ENDP
 
 
