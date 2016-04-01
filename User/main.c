@@ -250,7 +250,7 @@ int main(void)
 					break;
 
 			case '4':
-					printf("%d,%d,%d,%d,%d,%d,%d,%d,%d,%d\r\n",
+					printf("%d,%d,%d,%d,%d,%d,%d,%d,%d,%d \r\n",
 					(int)volt1,(int)volt2,g_tBMP085.Temp,g_tBMP085.Press,
 					RTC_DateStructure.RTC_Year,
 					RTC_DateStructure.RTC_Month,

@@ -1445,30 +1445,30 @@ Image Symbol Table
     i.i2c_Stop                               0x0800305c   Section        0  bsp_i2c_gpio.o(i.i2c_Stop)
     i.i2c_WaitAck                            0x0800307c   Section        0  bsp_i2c_gpio.o(i.i2c_WaitAck)
     i.main                                   0x080030b8   Section        0  main.o(i.main)
-    i.sf_AutoWritePage                       0x080037ac   Section        0  bsp_spi_flash.o(i.sf_AutoWritePage)
-    sf_AutoWritePage                         0x080037ad   Thumb Code   268  bsp_spi_flash.o(i.sf_AutoWritePage)
-    i.sf_CmpData                             0x080038c0   Section        0  bsp_spi_flash.o(i.sf_CmpData)
-    sf_CmpData                               0x080038c1   Thumb Code   122  bsp_spi_flash.o(i.sf_CmpData)
-    i.sf_EraseSector                         0x08003944   Section        0  bsp_spi_flash.o(i.sf_EraseSector)
-    i.sf_NeedErase                           0x08003984   Section        0  bsp_spi_flash.o(i.sf_NeedErase)
-    sf_NeedErase                             0x08003985   Thumb Code    40  bsp_spi_flash.o(i.sf_NeedErase)
-    i.sf_PageWrite                           0x080039ac   Section        0  bsp_spi_flash.o(i.sf_PageWrite)
-    i.sf_ReadBuffer                          0x08003b08   Section        0  bsp_spi_flash.o(i.sf_ReadBuffer)
-    i.sf_ReadID                              0x08003b6c   Section        0  bsp_spi_flash.o(i.sf_ReadID)
-    i.sf_ReadInfo                            0x08003bb4   Section        0  bsp_spi_flash.o(i.sf_ReadInfo)
-    i.sf_SendByte                            0x08003c80   Section        0  bsp_spi_flash.o(i.sf_SendByte)
-    sf_SendByte                              0x08003c81   Thumb Code    50  bsp_spi_flash.o(i.sf_SendByte)
-    i.sf_WaitForWriteEnd                     0x08003cb8   Section        0  bsp_spi_flash.o(i.sf_WaitForWriteEnd)
-    sf_WaitForWriteEnd                       0x08003cb9   Thumb Code    42  bsp_spi_flash.o(i.sf_WaitForWriteEnd)
-    i.sf_WriteBuffer                         0x08003ce8   Section        0  bsp_spi_flash.o(i.sf_WriteBuffer)
-    i.sf_WriteEnable                         0x08003e5c   Section        0  bsp_spi_flash.o(i.sf_WriteEnable)
-    sf_WriteEnable                           0x08003e5d   Thumb Code    28  bsp_spi_flash.o(i.sf_WriteEnable)
-    i.sf_WriteStatus                         0x08003e7c   Section        0  bsp_spi_flash.o(i.sf_WriteStatus)
-    sf_WriteStatus                           0x08003e7d   Thumb Code    98  bsp_spi_flash.o(i.sf_WriteStatus)
-    .constdata                               0x08003eec   Section       48  bsp_timer.o(.constdata)
-    __FUNCTION__                             0x08003eec   Data          15  bsp_timer.o(.constdata)
-    __FUNCTION__                             0x08003efb   Data          19  bsp_timer.o(.constdata)
-    __FUNCTION__                             0x08003f0e   Data          14  bsp_timer.o(.constdata)
+    i.sf_AutoWritePage                       0x080037b0   Section        0  bsp_spi_flash.o(i.sf_AutoWritePage)
+    sf_AutoWritePage                         0x080037b1   Thumb Code   268  bsp_spi_flash.o(i.sf_AutoWritePage)
+    i.sf_CmpData                             0x080038c4   Section        0  bsp_spi_flash.o(i.sf_CmpData)
+    sf_CmpData                               0x080038c5   Thumb Code   122  bsp_spi_flash.o(i.sf_CmpData)
+    i.sf_EraseSector                         0x08003948   Section        0  bsp_spi_flash.o(i.sf_EraseSector)
+    i.sf_NeedErase                           0x08003988   Section        0  bsp_spi_flash.o(i.sf_NeedErase)
+    sf_NeedErase                             0x08003989   Thumb Code    40  bsp_spi_flash.o(i.sf_NeedErase)
+    i.sf_PageWrite                           0x080039b0   Section        0  bsp_spi_flash.o(i.sf_PageWrite)
+    i.sf_ReadBuffer                          0x08003b0c   Section        0  bsp_spi_flash.o(i.sf_ReadBuffer)
+    i.sf_ReadID                              0x08003b70   Section        0  bsp_spi_flash.o(i.sf_ReadID)
+    i.sf_ReadInfo                            0x08003bb8   Section        0  bsp_spi_flash.o(i.sf_ReadInfo)
+    i.sf_SendByte                            0x08003c84   Section        0  bsp_spi_flash.o(i.sf_SendByte)
+    sf_SendByte                              0x08003c85   Thumb Code    50  bsp_spi_flash.o(i.sf_SendByte)
+    i.sf_WaitForWriteEnd                     0x08003cbc   Section        0  bsp_spi_flash.o(i.sf_WaitForWriteEnd)
+    sf_WaitForWriteEnd                       0x08003cbd   Thumb Code    42  bsp_spi_flash.o(i.sf_WaitForWriteEnd)
+    i.sf_WriteBuffer                         0x08003cec   Section        0  bsp_spi_flash.o(i.sf_WriteBuffer)
+    i.sf_WriteEnable                         0x08003e60   Section        0  bsp_spi_flash.o(i.sf_WriteEnable)
+    sf_WriteEnable                           0x08003e61   Thumb Code    28  bsp_spi_flash.o(i.sf_WriteEnable)
+    i.sf_WriteStatus                         0x08003e80   Section        0  bsp_spi_flash.o(i.sf_WriteStatus)
+    sf_WriteStatus                           0x08003e81   Thumb Code    98  bsp_spi_flash.o(i.sf_WriteStatus)
+    .constdata                               0x08003ef0   Section       48  bsp_timer.o(.constdata)
+    __FUNCTION__                             0x08003ef0   Data          15  bsp_timer.o(.constdata)
+    __FUNCTION__                             0x08003eff   Data          19  bsp_timer.o(.constdata)
+    __FUNCTION__                             0x08003f12   Data          14  bsp_timer.o(.constdata)
     .data                                    0x20000000   Section       12  ad7705_test.o(.data)
     .data                                    0x2000000c   Section       13  bsp_timer.o(.data)
     s_uiDelayCount                           0x2000000c   Data           4  bsp_timer.o(.data)
@@ -1770,14 +1770,14 @@ Image Symbol Table
     i2c_Stop                                 0x0800305d   Thumb Code    28  bsp_i2c_gpio.o(i.i2c_Stop)
     i2c_WaitAck                              0x0800307d   Thumb Code    56  bsp_i2c_gpio.o(i.i2c_WaitAck)
     main                                     0x080030b9   Thumb Code  1694  main.o(i.main)
-    sf_EraseSector                           0x08003945   Thumb Code    60  bsp_spi_flash.o(i.sf_EraseSector)
-    sf_PageWrite                             0x080039ad   Thumb Code   336  bsp_spi_flash.o(i.sf_PageWrite)
-    sf_ReadBuffer                            0x08003b09   Thumb Code    92  bsp_spi_flash.o(i.sf_ReadBuffer)
-    sf_ReadID                                0x08003b6d   Thumb Code    68  bsp_spi_flash.o(i.sf_ReadID)
-    sf_ReadInfo                              0x08003bb5   Thumb Code   134  bsp_spi_flash.o(i.sf_ReadInfo)
-    sf_WriteBuffer                           0x08003ce9   Thumb Code   366  bsp_spi_flash.o(i.sf_WriteBuffer)
-    Region$$Table$$Base                      0x08003f1c   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08003f3c   Number         0  anon$$obj.o(Region$$Table)
+    sf_EraseSector                           0x08003949   Thumb Code    60  bsp_spi_flash.o(i.sf_EraseSector)
+    sf_PageWrite                             0x080039b1   Thumb Code   336  bsp_spi_flash.o(i.sf_PageWrite)
+    sf_ReadBuffer                            0x08003b0d   Thumb Code    92  bsp_spi_flash.o(i.sf_ReadBuffer)
+    sf_ReadID                                0x08003b71   Thumb Code    68  bsp_spi_flash.o(i.sf_ReadID)
+    sf_ReadInfo                              0x08003bb9   Thumb Code   134  bsp_spi_flash.o(i.sf_ReadInfo)
+    sf_WriteBuffer                           0x08003ced   Thumb Code   366  bsp_spi_flash.o(i.sf_WriteBuffer)
+    Region$$Table$$Base                      0x08003f20   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08003f40   Number         0  anon$$obj.o(Region$$Table)
     adc1                                     0x20000000   Data           2  ad7705_test.o(.data)
     adc2                                     0x20000002   Data           2  ad7705_test.o(.data)
     volt1                                    0x20000004   Data           4  ad7705_test.o(.data)
@@ -1806,9 +1806,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000189
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00003f90, Max: 0x00100000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00003f94, Max: 0x00100000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00003f3c, Max: 0x00100000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00003f40, Max: 0x00100000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -1997,22 +1997,22 @@ Memory Map of the image
     0x0800302c   0x00000030   Code   RO         1007    i.i2c_Start         bsp_i2c_gpio.o
     0x0800305c   0x00000020   Code   RO         1008    i.i2c_Stop          bsp_i2c_gpio.o
     0x0800307c   0x0000003c   Code   RO         1009    i.i2c_WaitAck       bsp_i2c_gpio.o
-    0x080030b8   0x000006f4   Code   RO            4    i.main              main.o
-    0x080037ac   0x00000114   Code   RO          842    i.sf_AutoWritePage  bsp_spi_flash.o
-    0x080038c0   0x00000084   Code   RO          843    i.sf_CmpData        bsp_spi_flash.o
-    0x08003944   0x00000040   Code   RO          845    i.sf_EraseSector    bsp_spi_flash.o
-    0x08003984   0x00000028   Code   RO          846    i.sf_NeedErase      bsp_spi_flash.o
-    0x080039ac   0x0000015c   Code   RO          847    i.sf_PageWrite      bsp_spi_flash.o
-    0x08003b08   0x00000064   Code   RO          848    i.sf_ReadBuffer     bsp_spi_flash.o
-    0x08003b6c   0x00000048   Code   RO          849    i.sf_ReadID         bsp_spi_flash.o
-    0x08003bb4   0x000000cc   Code   RO          850    i.sf_ReadInfo       bsp_spi_flash.o
-    0x08003c80   0x00000038   Code   RO          851    i.sf_SendByte       bsp_spi_flash.o
-    0x08003cb8   0x00000030   Code   RO          852    i.sf_WaitForWriteEnd  bsp_spi_flash.o
-    0x08003ce8   0x00000174   Code   RO          853    i.sf_WriteBuffer    bsp_spi_flash.o
-    0x08003e5c   0x00000020   Code   RO          854    i.sf_WriteEnable    bsp_spi_flash.o
-    0x08003e7c   0x00000070   Code   RO          855    i.sf_WriteStatus    bsp_spi_flash.o
-    0x08003eec   0x00000030   Data   RO          498    .constdata          bsp_timer.o
-    0x08003f1c   0x00000020   Data   RO         3812    Region$$Table       anon$$obj.o
+    0x080030b8   0x000006f8   Code   RO            4    i.main              main.o
+    0x080037b0   0x00000114   Code   RO          842    i.sf_AutoWritePage  bsp_spi_flash.o
+    0x080038c4   0x00000084   Code   RO          843    i.sf_CmpData        bsp_spi_flash.o
+    0x08003948   0x00000040   Code   RO          845    i.sf_EraseSector    bsp_spi_flash.o
+    0x08003988   0x00000028   Code   RO          846    i.sf_NeedErase      bsp_spi_flash.o
+    0x080039b0   0x0000015c   Code   RO          847    i.sf_PageWrite      bsp_spi_flash.o
+    0x08003b0c   0x00000064   Code   RO          848    i.sf_ReadBuffer     bsp_spi_flash.o
+    0x08003b70   0x00000048   Code   RO          849    i.sf_ReadID         bsp_spi_flash.o
+    0x08003bb8   0x000000cc   Code   RO          850    i.sf_ReadInfo       bsp_spi_flash.o
+    0x08003c84   0x00000038   Code   RO          851    i.sf_SendByte       bsp_spi_flash.o
+    0x08003cbc   0x00000030   Code   RO          852    i.sf_WaitForWriteEnd  bsp_spi_flash.o
+    0x08003cec   0x00000174   Code   RO          853    i.sf_WriteBuffer    bsp_spi_flash.o
+    0x08003e60   0x00000020   Code   RO          854    i.sf_WriteEnable    bsp_spi_flash.o
+    0x08003e80   0x00000070   Code   RO          855    i.sf_WriteStatus    bsp_spi_flash.o
+    0x08003ef0   0x00000030   Data   RO          498    .constdata          bsp_timer.o
+    0x08003f20   0x00000020   Data   RO         3812    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00007260, Max: 0x00020000, ABSOLUTE)
@@ -2056,7 +2056,7 @@ Image component sizes
        974        104          0          1          0       8236   bsp_tm7705.o
       1804        154          0          1       8352      12396   bsp_uart_fifo.o
         56          0          0          0          0       1266   demo_spi_flash.o
-      2216        488          0          0          0     289823   main.o
+      2220        492          0          0          0     289823   main.o
         26          0          0          0          0        476   mems_test.o
        140         22          0          0          0       1711   misc.o
         36          8        392          0      16384        908   startup_stm32f40_41xxx.o
@@ -2071,7 +2071,7 @@ Image component sizes
        340         34          0         20          0       1901   system_stm32f4xx.o
 
     ----------------------------------------------------------------------
-     14188       1692        472         80      29196     430216   Object Totals
+     14192       1696        472         80      29196     430216   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         30          0          0          1          3          0   (incl. Padding)
 
@@ -2118,15 +2118,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     15716       1768        472         84      29196     415812   Grand Totals
-     15716       1768        472         84      29196     415812   ELF Image Totals
-     15716       1768        472         84          0          0   ROM Totals
+     15720       1772        472         84      29196     415812   Grand Totals
+     15720       1772        472         84      29196     415812   ELF Image Totals
+     15720       1772        472         84          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                16188 (  15.81kB)
+    Total RO  Size (Code + RO Data)                16192 (  15.81kB)
     Total RW  Size (RW Data + ZI Data)             29280 (  28.59kB)
-    Total ROM Size (Code + RO Data + RW Data)      16272 (  15.89kB)
+    Total ROM Size (Code + RO Data + RW Data)      16276 (  15.89kB)
 
 ==============================================================================
 

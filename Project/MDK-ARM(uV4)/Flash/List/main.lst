@@ -37308,7 +37308,7 @@ N					RTC_TimeStructure.RTC_Seconds);
 N					break;
 N
 N			case '4':
-N					printf("%d,%d,%d,%d,%d,%d,%d,%d,%d,%d\r\n",
+N					printf("%d,%d,%d,%d,%d,%d,%d,%d,%d,%d \r\n",
 N					(int)volt1,(int)volt2,g_tBMP085.Temp,g_tBMP085.Press,
 N					RTC_DateStructure.RTC_Year,
 N					RTC_DateStructure.RTC_Month,
