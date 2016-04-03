@@ -53,8 +53,12 @@ int main(void)
 	int i=0,j=0,k=0,m=0,n=0;
 	bsp_Init();		/* 硬件初始化 */
 	PrintfLogo();	/* 打印例程信息到串口1 */
+	bsp_InitSFlash();	/* 初始化SPI 串行Flash */
+	sf_ReadBuffer(A, 1440 * g_tSF.PageSize, 4);	
+	CA2F(A,&a);
+	j=a;
 	while(1)
-	{
+	{ 
 		bsp_Idle();
 		RTC_TimeShow();/*获取当前时间*/
 		
@@ -282,6 +286,13 @@ int main(void)
 			{
 				j=0;
 			}
+			a=j;
+		  F2CA(A,a); /*float->charArray*/
+		  if (sf_WriteBuffer(A, 1440* g_tSF.PageSize,4) == 0)
+			{
+				printf("写串行Flash出错！\r\n");
+			}
+			
 		
 		}
 	}

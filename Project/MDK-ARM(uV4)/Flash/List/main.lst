@@ -37111,8 +37111,12 @@ N	unsigned char A[4],HalfHour[16*6*30+6],buf[16*6*30+6],cmd;
 N	int i=0,j=0,k=0,m=0,n=0;
 N	bsp_Init();		/* 硬件初始化 */
 N	PrintfLogo();	/* 打印例程信息到串口1 */
+N	bsp_InitSFlash();	/* 初始化SPI 串行Flash */
+N	sf_ReadBuffer(A, 1440 * g_tSF.PageSize, 4);	
+N	CA2F(A,&a);
+N	j=a;
 N	while(1)
-N	{
+N	{ 
 N		bsp_Idle();
 N		RTC_TimeShow();/*获取当前时间*/
 N		
@@ -37340,6 +37344,13 @@ N			if(j==2*24*30)
 N			{
 N				j=0;
 N			}
+N			a=j;
+N		  F2CA(A,a); /*float->charArray*/
+N		  if (sf_WriteBuffer(A, 1440* g_tSF.PageSize,4) == 0)
+N			{
+N				printf("写串行Flash出错！\r\n");
+N			}
+N			
 N		
 N		}
 N	}
