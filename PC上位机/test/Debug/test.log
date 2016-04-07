@@ -1,0 +1,37 @@
+﻿生成启动时间为 2016/4/7 16:41:09。
+     1>项目“E:\PC上位机\test\test\test.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Yu"stdafx.h" /Fp"Debug\test.pch" /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt test.cpp testDlg.cpp
+         testDlg.cpp
+     1>e:\pc上位机\test\test\testdlg.cpp(188): error C2039: “GetCommEvent”: 不是“CMscomm1”的成员
+         e:\pc上位机\test\test\mscomm1.h(11): note: 参见“CMscomm1”的声明
+     1>e:\pc上位机\test\test\testdlg.cpp(190): error C2039: “GetInput”: 不是“CMscomm1”的成员
+         e:\pc上位机\test\test\mscomm1.h(11): note: 参见“CMscomm1”的声明
+     1>e:\pc上位机\test\test\testdlg.cpp(204): error C2664: “void ATL::CStringT<wchar_t,StrTraitMFC_DLL<wchar_t,ATL::ChTraitsCRT<wchar_t>>>::Format(UINT,...)”: 无法将参数 1 从“const char [17]”转换为“const wchar_t *”
+         e:\pc上位机\test\test\testdlg.cpp(204): note: 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
+     1>e:\pc上位机\test\test\testdlg.cpp(206): error C2664: “void ATL::CStringT<wchar_t,StrTraitMFC_DLL<wchar_t,ATL::ChTraitsCRT<wchar_t>>>::Format(UINT,...)”: 无法将参数 1 从“const char [6]”转换为“const wchar_t *”
+         e:\pc上位机\test\test\testdlg.cpp(206): note: 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
+     1>e:\pc上位机\test\test\testdlg.cpp(207): error C2678: 二进制“+”: 没有找到接受“const char [16]”类型的左操作数的运算符(或没有可接受的转换)
+         d:\program files (x86)\microsoft visual studio 14.0\vc\include\comutil.h(454): note: 可能是“_bstr_t operator +(const wchar_t *,const _bstr_t &)”
+         d:\program files (x86)\microsoft visual studio 14.0\vc\include\comutil.h(444): note: 或  “_bstr_t operator +(const char *,const _bstr_t &)”
+         d:\program files (x86)\microsoft visual studio 14.0\vc\atlmfc\include\atlsimpstr.h(643): note: 或    “ATL::CSimpleStringT<wchar_t,true> ATL::CSimpleStringT<wchar_t,true>::operator +(const ATL::CSimpleStringT<wchar_t,true> &,const ATL::CSimpleStringT<wchar_t,true> &)”[使用参数相关的查找找到]
+         d:\program files (x86)\microsoft visual studio 14.0\vc\atlmfc\include\atlsimpstr.h(654): note: 或    “ATL::CSimpleStringT<wchar_t,true> ATL::CSimpleStringT<wchar_t,true>::operator +(const ATL::CSimpleStringT<wchar_t,true> &,const wchar_t *)”[使用参数相关的查找找到]
+         d:\program files (x86)\microsoft visual studio 14.0\vc\atlmfc\include\atlsimpstr.h(665): note: 或    “ATL::CSimpleStringT<wchar_t,true> ATL::CSimpleStringT<wchar_t,true>::operator +(const wchar_t *,const ATL::CSimpleStringT<wchar_t,true> &)”[使用参数相关的查找找到]
+         d:\program files (x86)\microsoft visual studio 14.0\vc\atlmfc\include\cstringt.h(2380): note: 或    “ATL::CStringT<wchar_t,StrTraitMFC_DLL<wchar_t,ATL::ChTraitsCRT<wchar_t>>> ATL::CStringT<wchar_t,StrTraitMFC_DLL<wchar_t,ATL::ChTraitsCRT<wchar_t>>>::operator +(const ATL::CStringT<wchar_t,StrTraitMFC_DLL<wchar_t,ATL::ChTraitsCRT<wchar_t>>> &,const ATL::CStringT<wchar_t,StrTraitMFC_DLL<wchar_t,ATL::ChTraitsCRT<wchar_t>>> &)”[使用参数相关的查找找到]
+         d:\program files (x86)\microsoft visual studio 14.0\vc\atlmfc\include\cstringt.h(2391): note: 或    “ATL::CStringT<wchar_t,StrTraitMFC_DLL<wchar_t,ATL::ChTraitsCRT<wchar_t>>> ATL::operator +(const ATL::CStringT<wchar_t,StrTraitMFC_DLL<wchar_t,ATL::ChTraitsCRT<wchar_t>>> &,const wchar_t *)”[使用参数相关的查找找到]
+         d:\program files (x86)\microsoft visual studio 14.0\vc\atlmfc\include\cstringt.h(2402): note: 或    “ATL::CStringT<wchar_t,StrTraitMFC_DLL<wchar_t,ATL::ChTraitsCRT<wchar_t>>> ATL::operator +(const wchar_t *,const ATL::CStringT<wchar_t,StrTraitMFC_DLL<wchar_t,ATL::ChTraitsCRT<wchar_t>>> &)”[使用参数相关的查找找到]
+         d:\program files (x86)\microsoft visual studio 14.0\vc\atlmfc\include\cstringt.h(2419): note: 或    “ATL::CStringT<wchar_t,StrTraitMFC_DLL<wchar_t,ATL::ChTraitsCRT<wchar_t>>> ATL::CStringT<wchar_t,StrTraitMFC_DLL<wchar_t,ATL::ChTraitsCRT<wchar_t>>>::operator +(const ATL::CStringT<wchar_t,StrTraitMFC_DLL<wchar_t,ATL::ChTraitsCRT<wchar_t>>> &,char)”[使用参数相关的查找找到]
+         d:\program files (x86)\microsoft visual studio 14.0\vc\atlmfc\include\cstringt.h(2431): note: 或    “ATL::CStringT<wchar_t,StrTraitMFC_DLL<wchar_t,ATL::ChTraitsCRT<wchar_t>>> ATL::CStringT<wchar_t,StrTraitMFC_DLL<wchar_t,ATL::ChTraitsCRT<wchar_t>>>::operator +(char,const ATL::CStringT<wchar_t,StrTraitMFC_DLL<wchar_t,ATL::ChTraitsCRT<wchar_t>>> &)”[使用参数相关的查找找到]
+         d:\program files (x86)\microsoft visual studio 14.0\vc\atlmfc\include\cstringt.h(2444): note: 或    “ATL::CStringT<wchar_t,StrTraitMFC_DLL<wchar_t,ATL::ChTraitsCRT<wchar_t>>> ATL::CStringT<wchar_t,StrTraitMFC_DLL<wchar_t,ATL::ChTraitsCRT<wchar_t>>>::operator +(const ATL::CStringT<wchar_t,StrTraitMFC_DLL<wchar_t,ATL::ChTraitsCRT<wchar_t>>> &,wchar_t)”[使用参数相关的查找找到]
+         d:\program files (x86)\microsoft visual studio 14.0\vc\atlmfc\include\cstringt.h(2456): note: 或    “ATL::CStringT<wchar_t,StrTraitMFC_DLL<wchar_t,ATL::ChTraitsCRT<wchar_t>>> ATL::CStringT<wchar_t,StrTraitMFC_DLL<wchar_t,ATL::ChTraitsCRT<wchar_t>>>::operator +(wchar_t,const ATL::CStringT<wchar_t,StrTraitMFC_DLL<wchar_t,ATL::ChTraitsCRT<wchar_t>>> &)”[使用参数相关的查找找到]
+         e:\pc上位机\test\test\testdlg.cpp(207): note: 尝试匹配参数列表“(const char [16], CString)”时
+     1>e:\pc上位机\test\test\testdlg.cpp(207): error C2660: “CWnd::SetDlgItemTextW”: 函数不接受 1 个参数
+         正在生成代码...
+         正在编译...
+         test.cpp
+         正在生成代码...
+     1>已完成生成项目“E:\PC上位机\test\test\test.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.54
